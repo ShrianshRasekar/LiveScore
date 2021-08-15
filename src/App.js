@@ -28,12 +28,17 @@ function App() {
 {
     matches.map((match)=>(
       <Fragment key={match.unique_id}>
+        {match.type==="Twenty20"?(
+          <MyCard key={match.unique_id} match={match}/>
+        ):("")}
         {match.type==="ODI"?(
           <MyCard key={match.unique_id} match={match}/>
         ):("")}
       </Fragment>
     ))
   }  
+
+
 </Grid>
   </Grid>
     </div>

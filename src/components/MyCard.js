@@ -35,9 +35,9 @@ const MyCard = ({ match }) => {
               <Typography variant="h5">{match["team-1"]}</Typography>
             </Grid>
             <Grid item> VS
-              <img
+              <background-image
                 style={{ width: 85 }}
-                src={require("../img/vs2.png")}
+                src= "../img/vs2.png"
                 alt=""
               />
             </Grid>
@@ -64,6 +64,11 @@ const MyCard = ({ match }) => {
               color="primary"
             >
               Starting time {new Date(match.dateTimeGMT).toLocaleString()}
+            </Button>
+            <Button style={{ marginLeft: 5 }}
+              variant="outlined"
+              color="primary">
+            <Typography variant="h7">Type - {match["type"]}</Typography>
             </Button>
           </Grid>
         </CardActions>
@@ -93,6 +98,7 @@ const MyCard = ({ match }) => {
 
   return (
     <>
+      {match.type == "Twenty20" ? getMatchCard() : ""}
       {match.type == "ODI" ? getMatchCard() : ""}
       <Dialog
         open={open}
@@ -107,6 +113,7 @@ const MyCard = ({ match }) => {
             <Typography>
               Match
               <span style={{ fontStyle: "italic", fontWeight: "bold" }}>
+              {" "}
                 {detail.matchStarted ? "Started" : "Still not started"}
               </span>
             </Typography>

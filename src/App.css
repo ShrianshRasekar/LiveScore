@@ -26,6 +26,9 @@
 
 body{
   background-color: #e2e2ee;
+  background-image: url("../src/img/stadium.jpg"); 
+  background-repeat: no-repeat; 
+  background-size: cover;
 }
 .App-link {
   color: #61dafb;
